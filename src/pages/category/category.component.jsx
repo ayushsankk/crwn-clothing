@@ -22,7 +22,7 @@ const CategoryPage = ({ collection }) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    collection: selectCollection(ownProps.match.params.categoryId)(state),
+    collection: selectCollection(ownProps.match.params.collectionId)(state),
   };
 };
 
