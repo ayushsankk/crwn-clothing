@@ -17,7 +17,15 @@ export const selectCollection = (collectionUrlParam) =>
     console.log('selector');
     console.log(collectionUrlParam);
     console.log(collections);
-    return collections ? collections[collectionUrlParam] : null
-  }
-    
-  );
+    return collections ? collections[collectionUrlParam] : null;
+  });
+
+export const selectIsCollectionFetching = createSelector(
+  [selectShop],
+  (shop) => shop.isFetching
+);
+
+export const selectIsCollectionLoaded = createSelector(
+  [selectShop],
+  (shop) => !!shop.collections
+);
